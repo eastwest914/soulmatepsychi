@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psychic for the Soul | Psychic Reading Boulder, CO</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0a1118;
+      --bg-card: #121c26;
+      --bg-card-hover: #182533;
+      --accent-cyan: #22d3ee;
+      --accent-blue: #0284c7;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Outfit', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #67e8f9;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(10, 17, 24, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-brand img {
+      height: 45px;
+      width: auto;
+      border-radius: 6px;
+    }
+
+    .brand-name {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .brand-name span {
+      color: var(--accent-cyan);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    nav a {
+      color: var(--text-main);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .btn-call {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      color: #ffffff !important;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 14px rgba(34, 211, 238, 0.25);
+      display: inline-block;
+    }
+
+    .btn-call:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    /* Main Sections */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      color: #ffffff;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 7rem 2rem 5rem 2rem;
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: 3.2rem;
+      margin-bottom: 1.2rem;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 750px;
+      margin: 0 auto 2.5rem auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      color: #fff !important;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main) !important;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff !important;
+    }
+
+    .hero-hours {
+      font-size: 0.9rem;
+      color: var(--accent-cyan);
+    }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-content p {
+      margin-bottom: 1.2rem;
+      color: var(--text-muted);
+    }
+
+    .about-content strong {
+      color: #ffffff;
+    }
+
+    .about-content ul {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .about-content li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .about-content li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent-cyan);
+      font-weight: bold;
+    }
+
+    .about-image {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .service-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 2rem;
+      border-radius: 12px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-cyan);
+      background-color: var(--bg-card-hover);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Why Choose Us Grid */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .why-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 2.2rem;
+      border-radius: 12px;
+    }
+
+    .why-card h4 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      color: var(--accent-cyan);
+      margin-bottom: 0.8rem;
+    }
+
+    .why-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* FAQ Section */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .faq-item {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-answer {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 3rem;
+      border-radius: 16px;
+    }
+
+    .contact-info p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-info ul {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    .contact-info li {
+      margin-bottom: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .contact-info strong {
+      color: #ffffff;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Related Keywords / Footer */
+    .keywords-section {
+      text-align: center;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .keywords-section h3 {
+      font-family: var(--font-heading);
+      margin-bottom: 1rem;
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+
+    .keywords-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      list-style: none;
+    }
+
+    .keywords-list li {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .keywords-list li a {
+      color: var(--text-muted);
+    }
+
+    .keywords-list li a:hover {
+      color: var(--accent-cyan);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #060a0e;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header>
+    <div class="header-container">
+      <a href="#home" class="logo-brand">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4pY_ZUfUoLOqbnJbrTS9co4qFML1nRN2GKp6VpJ9PaQMA7Awa1O9gD-mCxx2r1e1OF9ot_Iu1qVckUPMuhAE4Qf3jDIabvga92Ec2NHuNrEKT1G1oFxST_C4tHHE7OHGmdqC0OrbqtEgk0UF_1DlF74fMOpZUJjvPV4W7aRbBFgvcacO3w5Pysscl-_0/w184-h105/Soulmate%20Psychic%20Reading.jpg" alt="Psychic for the Soul Logo">
+        <span class="brand-name">Psychic <span>for the Soul</span></span>
+      </a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div>
+        <a href="tel:7204525210" class="btn-call">Call 720-452-5210</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Insightful & Authentic <a href="http://callpsychicnow.com/" style="color: inherit; text-decoration: underline;">Psychic Reading</a> in Boulder, CO</h1>
+      <p>Discover clarity, peace, and spiritual direction with compassionate guidance tailored to your life, love, and soul's journey.</p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn-primary">Explore Services</a>
+        <a href="tel:7204525210" class="btn-secondary">Call Now</a>
+      </div>
+      <div class="hero-hours">Available for In-Person & Remote Readings</div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Us</h2>
+      <div class="about-grid">
+        <div class="about-content">
+          <p><strong>Psychic for the Soul</strong> is a dedicated spiritual guidance sanctuary based in <strong>Boulder, Colorado</strong>. We offer compassionate, highly accurate <a href="http://callpsychicnow.com/"><strong>Psychic Reading</strong></a>, tarot insights, love and relationship clarity, and spiritual healing designed to bring truth and light to your pathway.</p>
+          <p>Whether you are seeking answers about romantic connections, career crossroads, or spiritual evolution, our goal is to help you connect with your inner truth and <a href="https://www.google.com/maps?cid=17879435612936138247" target="_blank" rel="noopener"><strong>explore</strong></a> deeper spiritual awareness in a safe, non-judgmental environment.</p>
+          <ul>
+            <li>Personalized & confidential sessions</li>
+            <li>In-depth love & relationship guidance</li>
+            <li>Empathetic, highly experienced psychic advisor</li>
+          </ul>
+        </div>
+        <div class="about-image">
+          <a href="http://callpsychicnow.com/">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4pY_ZUfUoLOqbnJbrTS9co4qFML1nRN2GKp6VpJ9PaQMA7Awa1O9gD-mCxx2r1e1OF9ot_Iu1qVckUPMuhAE4Qf3jDIabvga92Ec2NHuNrEKT1G1oFxST_C4tHHE7OHGmdqC0OrbqtEgk0UF_1DlF74fMOpZUJjvPV4W7aRbBFgvcacO3w5Pysscl-_0/w184-h105/Soulmate%20Psychic%20Reading.jpg" alt="Psychic Reading Services">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3><a href="#contact">Psychic Reading</a></h3>
+          <p>Comprehensive intuitively guided psychic sessions revealing deep insights about your past, present, and future direction.</p>
+        </div>
+        <div class="service-card">
+          <h3><a href="#contact">Tarot Reading</a></h3>
+          <p>Detailed tarot card readings to reveal energetic patterns, unblock obstacles, and navigate vital life choices.</p>
+        </div>
+        <div class="service-card">
+          <h3><a href="#contact">Love & Relationship Psychic</a></h3>
+          <p>Specialized readings focused on twin flames, soulmates, romantic compatibility, and healing past heartbreaks.</p>
+        </div>
+        <div class="service-card">
+          <h3><a href="#contact">Clairvoyant Reading</a></h3>
+          <p>Direct spiritual vision and perception offering profound clarity on underlying motives, unseen energies, and upcoming events.</p>
+        </div>
+        <div class="service-card">
+          <h3><a href="#contact">Spiritual Psychic Reading</a></h3>
+          <p>Holistic spirit-centered guidance to rebalance your aura, align your chakras, and ignite your true soul purpose.</p>
+        </div>
+        <div class="service-card">
+          <h3><a href="#contact">Medium Reading</a></h3>
+          <p>Comforting spiritual connection aimed at bridging the gap with loved ones who have passed on.</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="#contact" class="btn-primary">Book Your Reading Today</a>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why">
+      <h2>Why Choose Psychic for the Soul?</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <h4>Accurate & Compassionate Guidance</h4>
+          <p>We deliver truthful, practical, and highly empathetic insights without fluff, giving you real solutions and authentic answers.</p>
+        </div>
+        <div class="why-card">
+          <h4>100% Confidential & Safe Space</h4>
+          <p>Your privacy and spiritual well-being are paramount. All sessions take place in a safe, warm, and strictly private atmosphere.</p>
+        </div>
+        <div class="why-card">
+          <h4>Tailored Spiritual Solutions</h4>
+          <p>Every soul journey is unique. Our readings are specifically tailored to address your personal questions, energy, and life goals.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">What can I expect during a Psychic Reading session?</div>
+          <div class="faq-answer">During a Psychic Reading session, our advisor connects with your energy field to reveal key insights regarding your current circumstances, upcoming opportunities, and spiritual guidance to navigate life smoothly.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How does a Love and Relationship Psychic reading work?</div>
+          <div class="faq-answer">A relationship reading focuses specifically on the emotional and spiritual connection between you and your partner or potential soulmate, providing advice on compatibility, communication, and long-term future.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How should I prepare for my Tarot Card Reading?</div>
+          <div class="faq-answer">Come with an open mind and a heart ready for guidance. It helps to prepare specific questions or focus areas (such as love, career, or personal growth) before your session begins.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can a Psychic Advisor conduct phone or online readings?</div>
+          <div class="faq-answer">Yes, energy is not bound by physical distance. Our phone and online spiritual readings offer the exact same accuracy, clarity, and depth as an in-person meeting.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What is the difference between a Medium Reading and a Psychic Reading?</div>
+          <div class="faq-answer">A Psychic Reading focuses on your personal energetic path, life choices, and relationships, whereas a Medium Reading aims to connect directly with loved ones who have crossed over to deliver messages of reassurance and peace.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p><strong>Business Name:</strong> <a href="http://callpsychicnow.com/" style="color: #fff; font-weight: bold;">Psychic for the Soul</a></p>
+          <ul>
+            <li><strong>Address:</strong> <a href="https://www.google.com/maps?cid=17879435612936138247" target="_blank" rel="noopener">5000 Butte St #197, Boulder, CO 80301</a></li>
+            <li><strong>Phone:</strong> <a href="tel:7204525210">720-452-5210</a></li>
+            <li><strong>Website:</strong> <a href="http://callpsychicnow.com/" target="_blank" rel="noopener">http://callpsychicnow.com/</a></li>
+          </ul>
+          <div style="margin-top: 1.5rem;">
+            <a href="tel:7204525210" class="btn-primary">Call For Session</a>
+          </div>
+        </div>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3054.9809792099722!2d-105.23493599999999!3d40.0312041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876bee093b41bcc5%3A0xf82083f5ed86ee07!2sPsychic%20for%20the%20Soul!5e0!3m2!1sen!2s!4v1789643732011!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Keywords / Footer -->
+    <div class="keywords-section">
+      <h3>Related Searches</h3>
+      <ul class="keywords-list">
+        <li><a href="#services">Psychic Reading</a></li>
+        <li><a href="#services">Tarot Reading</a></li>
+        <li><a href="#services">Love Psychic</a></li>
+        <li><a href="#services">Relationship Psychic</a></li>
+        <li><a href="#services">Clairvoyant Reading</a></li>
+        <li><a href="#services">Spiritual Psychic Reading</a></li>
+        <li><a href="#services">Psychic Advisor</a></li>
+        <li><a href="#services">Medium Reading</a></li>
+        <li><a href="#services">Tarot Card Reading</a></li>
+        <li><a href="#services">Love And Relationship Reading</a></li>
+      </ul>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© Psychic for the Soul — All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
